@@ -5,8 +5,8 @@
   <Version>1.0.0.0</Version>
   <ProviderName>Kwilt</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
-  <DisplayName DefaultValue="PowerpointImageAdder" />
-  <Description DefaultValue="PowerpointImageAdder"/>
+  <DisplayName DefaultValue="Image Inserter" />
+  <Description DefaultValue="Image insertion demo"/>
   <Hosts>
     <Host Name="Presentation" />
     <Host Name="Document" />  
