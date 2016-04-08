@@ -47,6 +47,9 @@
         var image = $(e.target);
         var data = image.data("base64");
 
+        // I've removed the isSetSupported check because the check fails in PowerPoint Online
+        // yet, the call actually works in PowerPoint Online.
+
         //if (Office.context.requirements.isSetSupported('ImageCoercion', '1.1')) {
             Office.context.document.setSelectedDataAsync(data, {
                 coercionType: Office.CoercionType.Image
