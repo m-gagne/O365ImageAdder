@@ -4,7 +4,7 @@ var Office = new function() {
     this._appContext = 18;
     this._showAll = true;
     this._setContext = {
-        IMAGECOERCION: "1.1"
+        
     };
 }
 

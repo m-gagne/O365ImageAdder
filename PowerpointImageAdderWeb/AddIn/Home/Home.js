@@ -47,7 +47,7 @@
         var image = $(e.target);
         var data = image.data("base64");
 
-        if (Office.context.requirements.isSetSupported('ImageCoercion', '1.1')) {
+        //if (Office.context.requirements.isSetSupported('ImageCoercion', '1.1')) {
             Office.context.document.setSelectedDataAsync(data, {
                 coercionType: Office.CoercionType.Image
             },
@@ -56,10 +56,10 @@
                     writeDebug("Action failed with error: " + asyncResult.error.message);
                 }
             });
-        } else {
-            writeDebug("Image Coercion call failed.");
-            writeDebug("Right click > Copy Image then paste :)");
-        }
+        //} else {
+        //    writeDebug("Image Coercion call failed.");
+        //    writeDebug("Right click > Copy Image then paste :)");
+        //}
     }
 
     function writeDebug(message) {
