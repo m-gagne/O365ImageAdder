@@ -7,6 +7,9 @@
     Office.initialize = function (reason) {
         $(document).ready(function () {
             app.initialize();
+
+            // Define a list of images
+            // Todo: find library to handle encoding images into Base64
             var imageDataSet = [
                 {
                     src: '../../Images/rainbow.png',
@@ -18,6 +21,7 @@
                 }
             ]
 
+            // Append list of images to UI
             var imageList = $('#images');
             $.each(imageDataSet, function (index, image) {
                 var id = 'image-' + index;
@@ -28,20 +32,20 @@
                     '</li>');
                 $('#' + id).click(insertImage);
             })
+
+            // Check to see if this Office context supports ImageCoercion
+            if (Office.context.requirements.isSetSupported('ImageCoercion', '1.1')) {
+                writeDebug("This office context supports ImageCoercion 1.1");
+            }
+            else {
+                writeDebug("This office context DOES NOT support ImageCoercion 1.1");
+            }
         });
     };
 
     function insertImage(e) {
         var image = $(e.target);
         var data = image.data("base64");
-
-        if (Office.context.requirements.isSetSupported('ImageCoercion', '1.1'))
-        {
-            writeDebug("This office context supports ImageCoercion 1.1");
-        }
-        else {
-            writeDebug("This office context DOES NOT support ImageCoercion 1.1");
-        }
 
         if (Office.context.requirements.isSetSupported('ImageCoercion', '1.1')) {
             Office.context.document.setSelectedDataAsync(data, {

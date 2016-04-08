@@ -68,6 +68,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Images\no-idea.png" />
+    <Content Include="Images\rainbow-32.png" />
+    <Content Include="Images\rainbow-64.png" />
     <Content Include="Images\rainbow.png" />
     <Content Include="Manifest\PowerpointImageAdder.xml" />
     <Content Include="packages.config" />
