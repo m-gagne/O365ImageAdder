@@ -1,16 +1,27 @@
 ﻿/* Page-specific styling */
 
 
-#images { 
-    list-style:none;
+#images {
+    list-style: none;
 }
 
-#images li { 
+#images li {
     display: inline-block;
     padding: 10px;
 }
 
-#images li img { 
+#images li img {
     width: 120px;
-    border: 5px solid black;
+    border: 5px solid #FFF;
+}
+
+#images li img:hover {
+    border: 5px solid #DDD;
+    animation: jiggle 0.2s infinite;
+	-webkit-animation: jiggle 0.2s infinite;
+    -moz-animation-duration: 0.2s;
+    -moz-animation-name: jiggle;
+    -moz-animation-iteration-count: infinite;
+    -webkit-transform: rotate(-1deg);
+    -moz-transform: rotate(-1deg);
 }

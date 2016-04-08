@@ -20,11 +20,13 @@
 
             var imageList = $('#images');
             $.each(imageDataSet, function (index, image) {
+                var id = 'image-' + index;
                 imageList.append('<li>' +
-                    '<img id="image' + index + '" ' +
+                    '<img id="' + id + '" ' +
                     ' src="' + image.src + '" ' +
                     ' data-base64="' + image.base64 + '">' +
-                    '</li>').click(insertImage);
+                    '</li>');
+                $('#' + id).click(insertImage);
             })
         });
     };
@@ -51,12 +53,12 @@
                 }
             });
         } else {
-            writeDebug("Image Coercion Not Supported!");
-            writeDebug("Right click => Copy Image ;)");
+            writeDebug("Image Coercion call failed.");
+            writeDebug("Right click > Copy Image then paste :)");
         }
     }
 
     function writeDebug(message) {
-        $("#debug").append("<p><strong>" + message + "</strong></p>");
+        $('ul', '#debug').append('<li>' + message + '</li>');
     }
 })();
